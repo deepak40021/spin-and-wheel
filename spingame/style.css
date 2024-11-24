@@ -1,0 +1,41 @@
+body {
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.wheel-container {
+    position: relative;
+    display: inline-block;
+}
+
+#wheelCanvas {
+    border: 5px solid #333;
+    margin-bottom: 20px;
+}
+
+/* Styling the pointer at the top */
+#pointer {
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 40px solid red; /* Red triangle for the pointer */
+    position: absolute;
+    top: 0; /* Align to top of the canvas */
+    left: 50%; /* Center the pointer horizontally */
+    transform: translateX(-50%);
+}
+
+/* Pointer wobble animation */
+@keyframes wobble {
+    0% { transform: translateX(-50%) rotate(0deg); }
+    25% { transform: translateX(-50%) rotate(-5deg); }
+    50% { transform: translateX(-50%) rotate(5deg); }
+    75% { transform: translateX(-50%) rotate(-5deg); }
+    100% { transform: translateX(-50%) rotate(0deg); }
+}
+
+/* Wobbling pointer animation class */
+.wobble {
+    animation: wobble 0.2s infinite;
+}
